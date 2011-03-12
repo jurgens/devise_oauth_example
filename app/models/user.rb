@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :oauthable
   devise :rememberable, :omniauthable
 
-  before_save :remember
-
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
@@ -13,13 +11,7 @@ class User < ActiveRecord::Base
     if user = User.find_by_email(data["email"])
       user
     else # Create an user with a stub password.
-      User.create!(:email => data["email"]) #, :password => Devise.friendly_token[0,20]
+      User.create!(:email => data["email"] ) #, :password => Devise.friendly_token[0,20]
     end
-  end
-
-protected
-
-  def remember
-    self.remember_me = true
   end
 end

@@ -2,6 +2,8 @@ Devisetest::Application.routes.draw do
 
   root :to => "home#index", :as => :root
 
+  post 'test' => 'home#test', :as => :test
+
   devise_for :users, :controllers => { :omniauth_callbacks => "authorizations" } do
     get 'sign_in', :to => 'sessions#new', :as => :new_user_session
     get 'sign_out', :to => 'sessions#destroy', :as => :destroy_user_session

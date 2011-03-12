@@ -1,5 +1,11 @@
 <h1>HOME</h1>
 
+<p>
+  <%= link_to 'Test ajax', test_url, :remote => true, :method => :post %>
+</p>
+
+<div id="placeholder"></div>
+
 <% if current_user.nil? %>
 <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 <% else %>
@@ -7,6 +13,9 @@
 <%= current_user.email %>
 <% end %>
 
+<hr>
+<h2>User:</h2>
+<%= current_user.inspect %>
 <hr>
 <h2>Session:</h2>
 <%= session.inspect %>
