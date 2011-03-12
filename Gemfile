@@ -4,7 +4,7 @@ gem 'rails', '3.0.5'
 gem 'omniauth', '~>0.2.0'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'#, :branch => 'v1.2.oauth'
-
+gem 'jquery-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
